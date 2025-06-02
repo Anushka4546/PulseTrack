@@ -1,4 +1,0 @@
-exit
-db.patient_anomalies.find().pretty()
-show collections
-use pulsetrack
