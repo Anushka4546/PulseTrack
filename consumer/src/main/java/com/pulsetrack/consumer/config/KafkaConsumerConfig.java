@@ -24,7 +24,7 @@ public class KafkaConsumerConfig {
         deserializer.setUseTypeMapperForKey(false);  // super important
 
         Map<String, Object> config = new HashMap<>();
-        config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
         config.put(ConsumerConfig.GROUP_ID_CONFIG, "vital-consumer-group");
 
         return new DefaultKafkaConsumerFactory<>(config, new StringDeserializer(), deserializer);

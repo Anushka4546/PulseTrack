@@ -23,8 +23,13 @@ public class AnomalyController {
         this.anomalyRepository = anomalyRepository;
     }
 
+    @GetMapping("/")
+    public ResponseEntity<List<PatientAnomaly>> getAnomalies() {
+        return ResponseEntity.ok(anomalyRepository.findAll());
+    }
+
     @GetMapping("/{patientId}")
-    public ResponseEntity<List<PatientAnomaly>> getAnomalies(@PathVariable String patientId) {
+    public ResponseEntity<List<PatientAnomaly>> getAnomaliesByPatientId(@PathVariable String patientId) {
         return ResponseEntity.ok(anomalyRepository.findByPatientId(patientId));
     }
 }

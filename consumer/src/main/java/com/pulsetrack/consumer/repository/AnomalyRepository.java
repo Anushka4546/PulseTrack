@@ -10,4 +10,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 @Repository
 public interface AnomalyRepository extends MongoRepository<PatientAnomaly, String> {
     List<PatientAnomaly> findByPatientId(String patientId);
+    List<PatientAnomaly> findAll();
 }
