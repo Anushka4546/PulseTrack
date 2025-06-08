@@ -5,6 +5,7 @@ import java.time.Instant;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
@@ -14,9 +15,11 @@ public class PatientAnomaly {
     private String id;
     private String patientId;
     private Instant timestamp;
+
+    @NotNull
     private String reason;
-    private int heartRate;
-    private int bloodPressure;
+    private Integer heartRate;
+    private Integer bloodPressure;
     private Double temperature;
     
     public PatientAnomaly() {}
